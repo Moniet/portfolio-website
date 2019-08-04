@@ -3,8 +3,11 @@ import { colors } from '../styles/theme.js'
 import { css, keyframes } from '@emotion/core'
 import Layout from '../components/Layout'
 import Stars from '../components/Stars'
+import facepaint from 'facepaint'
 
 const animDelay = () => (Math.random() * 2) + 0.25;
+const breakpoints = [576, 768, 992, 1200]
+const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 const astronautAnim = keyframes`
     0%, 100% {
@@ -32,6 +35,10 @@ const textContainer = css`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  ${mq({
+    margin: ['-25rem auto 0 auto', '-25rem auto 0 auto', '-20rem auto 0 auto', '-20rem auto 0 auto'],
+    width: ['70vw', '60vw', '60vw', '50vw']
+  })}
 `
 
 const h1 = css`
@@ -46,6 +53,10 @@ const h1 = css`
   transform: rotate(-10deg);
   grid-column: span 2;
   grid-row: 1;
+  z-index: 500;
+  ${mq({
+    fontSize: ['2rem', '2rem', '2.441rem', '2.441rem']
+  })}
 `
 const introText = css`
   grid-row: 2;
@@ -55,18 +66,26 @@ const introText = css`
   font-weight: 300;
   font-style: normal;
   color: ${colors.textLight};
-  background: ${colors.black};
   line-height: 1.5em;
   letter-spacing: 2px;
   margin: 3rem 0 0 2rem;
- transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  z-index: 500;
+  ${mq({
+    fontSize: ['1rem', '1rem', '1.25rem'],
+    margin: ['1rem 0 2rem 2rem', '1rem 0 0 2rem', '2rem 0 0 2rem']
+  })}
 `
 const largeMoon = css`
   position: absolute;
   width: 20rem;
   bottom: 10vw;
   transform: translateX(-65%);
-  z-index: 500;
+  z-index: 100;
+  ${mq({
+    bottom: ['40vw', '20vw', '15vw', '10vw'],
+    width: ['8rem', '10rem', '15rem']
+  })}
 `
 
 const smallMoon = css`
@@ -74,7 +93,10 @@ const smallMoon = css`
   right: 5vw;
   top: 10vw;
   width: 4rem;
-  z-index: 500;
+  z-index: 200;
+  ${mq({
+    width: ['2rem', '2rem', '4rem']
+  })}
 `
 
 const planet = css`
@@ -84,17 +106,16 @@ const planet = css`
   width: 40vw;
   transform: rotate(15deg);
   background: ${colors.black};
-  z-index: 500;  
+  z-index: 200;  
 `
 
 const astronaut = css`
   width: 10rem;
   margin-left: -10vw;
   animation: ${astronautAnim} 4s ease-in-out ${animDelay()}s infinite;
-  z-index: 500;
+  z-index: 200;
   grid-column: 1;
   grid-row: 5;
-  background: ${colors.black};
 `
 
 const IndexPage = () => (
