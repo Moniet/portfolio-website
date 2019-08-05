@@ -84,7 +84,7 @@ const largeMoon = css`
   z-index: 100;
   ${mq({
     bottom: ['10vw', '20vw', '15vw', '10vw'],
-    width: ['60vw', '10rem', '15rem']
+    width: ['60vw', '10rem', '15rem', '20rem']
   })}
 `
 
