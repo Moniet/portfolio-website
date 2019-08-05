@@ -36,7 +36,7 @@ const textContainer = css`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   ${mq({
-    margin: ['-25rem auto 0 auto', '-25rem auto 0 auto', '-20rem auto 0 auto', '-20rem auto 0 auto'],
+    margin: ['-20rem auto 0 auto', '-25rem auto 0 auto', '-20rem auto 0 auto', '-10rem auto 0 auto'],
     width: ['70vw', '60vw', '60vw', '50vw']
   })}
 `
@@ -55,7 +55,7 @@ const h1 = css`
   grid-row: 1;
   z-index: 500;
   ${mq({
-    fontSize: ['2rem', '2rem', '2.441rem', '2.441rem']
+    fontSize: ['1.563rem', '1.563rem', '2.441rem', '2.441rem']
   })}
 `
 const introText = css`
@@ -72,8 +72,8 @@ const introText = css`
   transform: rotate(-5deg);
   z-index: 500;
   ${mq({
-    fontSize: ['1rem', '1rem', '1.25rem'],
-    margin: ['1rem 0 2rem 2rem', '1rem 0 0 2rem', '2rem 0 0 2rem']
+    fontSize: ['0.75rem', '1rem', '1.25rem'],
+    margin: ['0rem 0 2rem 1.5rem', '1rem 0 0 2rem', '2rem 0 0 2rem']
   })}
 `
 const largeMoon = css`
@@ -83,8 +83,8 @@ const largeMoon = css`
   transform: translateX(-65%);
   z-index: 100;
   ${mq({
-    bottom: ['40vw', '20vw', '15vw', '10vw'],
-    width: ['8rem', '10rem', '15rem']
+    bottom: ['10vw', '20vw', '15vw', '10vw'],
+    width: ['60vw', '10rem', '15rem']
   })}
 `
 
@@ -95,7 +95,7 @@ const smallMoon = css`
   width: 4rem;
   z-index: 200;
   ${mq({
-    width: ['2rem', '2rem', '4rem']
+    width: ['2rem', '2rem', '4rem', '4rem']
   })}
 `
 
@@ -107,6 +107,10 @@ const planet = css`
   transform: rotate(15deg);
   background: ${colors.black};
   z-index: 200;  
+  ${mq({
+    width: ['60vw', '60vw', '40vw', '40vw'],
+    right: ['-30vw', '-30vw', '-20vw', '-20vw']
+  })}
 `
 
 const astronaut = css`
