@@ -31,7 +31,7 @@ const Footer = () => {
             <ul css={ul}>
                 <li><a href="https://github.com/moniet">Github</a></li>
                 <li><a href="https://codepen.io/moniet">Codepen</a></li>
-                <li><a href="https://twitter.com/monietz">Twitter</a></li>
+                <li><a href="https://twitter.com/__moniet">Twitter</a></li>
             </ul>
         </footer>
     )
